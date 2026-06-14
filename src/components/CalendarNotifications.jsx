@@ -14,7 +14,7 @@ const CalendarNotifications = () => {
         const token = await getIdToken(currentUser, true);
 
         // GET simple: el backend filtra y solo nos da los eventos vigentes
-        const response = await fetch("http://localhost:3000/api/events", {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/events`, {
           method: "GET",
           headers: { "Authorization": `Bearer ${token}` }
         });

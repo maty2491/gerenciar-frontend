@@ -22,7 +22,7 @@ const Interviews = () => {
       if (!currentUser) return;
       const token = await getIdToken(currentUser, true);
 
-      const response = await fetch("http://localhost:3000/api/interviews", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/interviews`, {
         method: "GET",
         headers: { "Authorization": `Bearer ${token}` }
       });
@@ -50,7 +50,7 @@ const Interviews = () => {
       const currentUser = auth.currentUser;
       const token = await getIdToken(currentUser, true);
 
-      const response = await fetch(`http://localhost:3000/api/interviews/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/interviews/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

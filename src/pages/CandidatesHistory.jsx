@@ -38,7 +38,7 @@ const CandidatesHistory = ({ onRefreshNeeded }) => {
       if (!currentUser) return;
       const token = await getIdToken(currentUser, true);
 
-      const response = await fetch("http://localhost:3000/api/interviews", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/interviews`, {
         method: "GET",
         headers: { "Authorization": `Bearer ${token}` }
       });
@@ -95,7 +95,7 @@ const CandidatesHistory = ({ onRefreshNeeded }) => {
       const currentUser = auth.currentUser;
       const token = await getIdToken(currentUser, true);
 
-      const response = await fetch(`http://localhost:3000/api/interviews/${editingCandidateId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/interviews/${editingCandidateId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -130,7 +130,7 @@ const CandidatesHistory = ({ onRefreshNeeded }) => {
       const currentUser = auth.currentUser;
       const token = await getIdToken(currentUser, true);
 
-      const response = await fetch(`http://localhost:3000/api/interviews/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/interviews/${id}`, {
         method: "DELETE",
         headers: { "Authorization": `Bearer ${token}` }
       });

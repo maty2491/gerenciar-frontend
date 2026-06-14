@@ -29,7 +29,7 @@ const Calendar = () => {
       const token = await getIdToken(currentUser, true);
 
       // Enviamos ?all=true para que el backend salte el filtro de fecha de hoy
-      const response = await fetch("http://localhost:3000/api/events?all=true", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/events?all=true`, {
         method: "GET",
         headers: { "Authorization": `Bearer ${token}` }
       });
@@ -82,7 +82,7 @@ const Calendar = () => {
       if (!currentUser) return;
       const token = await getIdToken(currentUser, true);
 
-      const response = await fetch("http://localhost:3000/api/events", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/events`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

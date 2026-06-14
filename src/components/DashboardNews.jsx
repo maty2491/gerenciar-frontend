@@ -13,7 +13,7 @@ const DashboardNews = () => {
         if (!currentUser) return;
         const token = await getIdToken(currentUser, true);
 
-        const response = await fetch("http://localhost:3000/api/interviews", {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/interviews`, {
           method: "GET",
           headers: { "Authorization": `Bearer ${token}` }
         });

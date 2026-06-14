@@ -1,6 +1,6 @@
 import { auth as firebaseAuth } from "./firebase";
 
-const BASE_URL = "http://localhost:3000/api/tasks";
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/tasks`;
 
 const getAuthHeaders = async () => {
   if (!firebaseAuth) throw new Error("Firebase no inicializado.");

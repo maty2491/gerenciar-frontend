@@ -74,7 +74,7 @@ const FormInterviews = ({ onSaveSuccess }) => {
             const token = await getIdToken(currentUser, true);
 
             // 3️⃣ ENVIAMOS A MONGODB
-            const response = await fetch("http://localhost:3000/api/interviews", {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/interviews`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

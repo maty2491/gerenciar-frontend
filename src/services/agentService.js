@@ -1,6 +1,6 @@
 import { auth as firebaseAuth } from "./firebase";
 
-const BASE_URL = "http://localhost:3000/api/agents";
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/agents`;
 
 // 1. Declaración limpia e independiente (Cualquier función del archivo puede verla)
 const getAuthHeaders = async () => {
