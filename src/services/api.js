@@ -1,6 +1,7 @@
 import { auth } from "./firebase";
 
-const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/user` || "http://localhost:3000/api/user";
+const BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+const API_BASE_URL = `${BASE}/api/user`;
 
 async function getFirebaseToken() {
   if (!auth?.currentUser) {
